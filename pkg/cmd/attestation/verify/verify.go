@@ -166,7 +166,7 @@ func runVerify(opts *Options) error {
 		if ok := errors.Is(err, api.ErrNoAttestations{}); ok {
 			return fmt.Errorf("no attestations found for subject: %s", artifact.DigestWithAlg())
 		}
-		return fmt.Errorf("failed to fetch attestations for subject: %s", artifact.DigestWithAlg())
+		return fmt.Errorf("failed to fetch attestations for subject: %s: %v", artifact.DigestWithAlg(), err)
 	}
 
 	// Apply predicate type filter to returned attestations

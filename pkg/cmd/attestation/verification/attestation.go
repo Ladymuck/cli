@@ -13,7 +13,7 @@ import (
 	"github.com/sigstore/sigstore-go/pkg/bundle"
 )
 
-var ErrLocalAttestations = errors.New("failed to load local attestations")
+var ErrLocalAttestations = errors.New("bundle file extension not supported, must be json or jsonl")
 
 type FetchAttestationsConfig struct {
 	APIClient  api.Client
